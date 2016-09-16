@@ -70,6 +70,16 @@ class TextField(BaseField):
             value = tag.text()
         return value
 
+class RawField(TextField):
+    """Returns a raw PyQuery object
+    """
+    def get_value(self, pq):
+        value = None
+
+        tag = pq
+        if self.selector is not None:
+            tag = pq(self.selector).eq(0)
+        return tag
 
 class AttributeValueField(TextField):
     """Simple text field, getting an attribute value.
