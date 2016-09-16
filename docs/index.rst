@@ -46,8 +46,8 @@ You can define items to be scraped using a declarative (Django-inspired) syntax:
             selector = 'table.maintable:gt(0) tr:gt(0)'
             base_url = 'http://www.mininova.org'
 
-At the moment, there are only two available fields: *TextField* and
-*AttributeValueField*. A *TextField* expects an optional *selector* argument,
+At the moment, there are only three available fields: *TextField*,
+*AttributeValueField*, and *RawField*. A *TextField* or *RawField* expect an optional *selector* argument,
 meanwhile *AttributeValueField* possible arguments are *selector* and *attr*.
 
 *selector* specifies the PyQuery selector for the element,
